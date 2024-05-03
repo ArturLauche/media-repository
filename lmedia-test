@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LMedia - LMedia Test</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="lmedia-css.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://lmedia-cdn.lauche.eu/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://lmedia-cdn.lauche.eu/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://lmedia-cdn.lauche.eu/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://lmedia-cdn.lauche.eu/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://lmedia-cdn.lauche.eu/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://lmedia-cdn.lauche.eu/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://lmedia-cdn.lauche.eu/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://lmedia-cdn.lauche.eu/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://lmedia-cdn.lauche.eu/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://lmedia-cdn.lauche.eu/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lmedia-cdn.lauche.eu/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://lmedia-cdn.lauche.eu/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lmedia-cdn.lauche.eu/favicon-16x16.png">
+<link rel="manifest" href="https://lmedia-cdn.lauche.eu/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://lmedia-cdn.lauche.eu/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
+</head>
+<meta name="description" content="This is a Video hosted on LMedia!" />
+<body>
+  <header>
+    <h1>LMedia / Test Page</h1>
+  </header>
+  <main>
+    <section>
+      <div class="video-wrapper">
+          <video id="videoPlayer" controls>
+              <source src="https://lmedia-cdn.lauche.eu/test-video.mp4" type="video/mp4">
+              Your browser does not support video streaming.
+          </video>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="legal-links">
+      <a href="https://lauche.eu/n-impressum.html" target="_blank">Impressum</a>
+      <a href="https://lauche.eu/n-privacy-policy.html" target="_blank">Datenschutzerklärung</a>
+    </div>
+  </footer>
+  <div id="cookie-banner" class="cookie-banner">
+    <p>This site uses cookies to provide you with a great user experience. By using this website you accept our <a href="https://lauche.eu/n-privacy-policy.html" target="_blank">privacy policy</a> and <a href="https://lauche.eu/n-impressum.html" target="_blank">impressum</a>.</p>
+    <button id="cookie-accept" class="cookie-accept">Accept</button>
+  </div>
+  <script src="cookie.js"></script>
+</body>
+</html>
