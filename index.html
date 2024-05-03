@@ -1,78 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LMedia</title>
-    <!-- Include Tailwind CSS via CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        /* Additional CSS */
-        .rounded-video {
-            border-radius: 20px; /* Adjust the value as needed */
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>LMedia</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.lauche.eu/lmedia-css.css">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://lmedia-cdn.lauche.eu/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="https://lmedia-cdn.lauche.eu/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="https://lmedia-cdn.lauche.eu/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="https://lmedia-cdn.lauche.eu/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="https://lmedia-cdn.lauche.eu/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="https://lmedia-cdn.lauche.eu/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="https://lmedia-cdn.lauche.eu/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="https://lmedia-cdn.lauche.eu/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="https://lmedia-cdn.lauche.eu/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="https://lmedia-cdn.lauche.eu/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://lmedia-cdn.lauche.eu/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="https://lmedia-cdn.lauche.eu/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://lmedia-cdn.lauche.eu/favicon-16x16.png">
+<link rel="manifest" href="https://lmedia-cdn.lauche.eu/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="https://lmedia-cdn.lauche.eu/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
 </head>
-
-<body class="bg-gray-50 font-sans leading-normal tracking-normal">
-    <!-- Topbar -->
-    <nav class="rounded-b-xl bg-gradient-to-r from-gray-100 to-white p-4 shadow-lg">
-        <div class="container mx-auto flex items-center justify-between">
-            <a href="/" class="flex items-center">
-                <img src="https://cdn.lauche.eu/logo-lmedia-nb" alt="LMedia logo" class="mr-3 h-8" />
-                <h1 class="text-xl font-bold text-gray-800">LMedia - Welcome to LMedia!</h1>
-            </a>
-        </div>
-    </nav>
-
-    <!-- Section 1: Video Player -->
-    <section class="p-8">
-        <div class="container mx-auto">
-            <video controls class="w-full rounded-video shadow-lg">
-                <source src="https://lmedia-cdn.lauche.eu/test-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        </div>
+<meta name="description" content="LMedia - A website for your Videos!" />
+<body>
+  <header>
+    <h1>LMedia - Welcome to LMedia!</h1>
+  </header>
+  <main>
+    <section>
+      <div class="video-wrapper">
+          <video id="videoPlayer" controls>
+              <source src="https://lmedia-cdn.lauche.eu/test-video.mp4" type="video/mp4">
+              Your browser does not support video streaming.
+          </video>
+      </div>
     </section>
-
-    <!-- Section 2: Trending Videos -->
-    <section class="p-8">
-        <div class="container mx-auto grid grid-cols-1 gap-8 text-center sm:grid-cols-2 md:grid-cols-3">
-            <a href="#" class="transform rounded-lg bg-white shadow-lg transition duration-300 hover:scale-105">
-                <img src="https://cdn.lauche.eu/logo-lmedia-rs.png" alt="Trending video thumbnail" class="rounded-t-lg" />
-                <div class="p-4">
-                    <h2 class="font-semibold text-gray-800">Trending Video 1</h2>
-                </div>
-            </a>
-            <a href="#" class="transform rounded-lg bg-white shadow-lg transition duration-300 hover:scale-105">
-                <img src="https://cdn.lauche.eu/logo-lmedia-rs.png" alt="Trending video thumbnail" class="rounded-t-lg" />
-                <div class="p-4">
-                    <h2 class="font-semibold text-gray-800">Trending Video 2</h2>
-                </div>
-            </a>
-            <a href="#" class="transform rounded-lg bg-white shadow-lg transition duration-300 hover:scale-105">
-                <img src="https://cdn.lauche.eu/logo-lmedia-rs.png" alt="Trending video thumbnail" class="rounded-t-lg" />
-                <div class="p-4">
-                    <h2 class="font-semibold text-gray-800">Trending Video 3</h2>
-                </div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-gradient-to-r from-gray-100 to-white p-6 text-center text-gray-800">
-        <div class="container mx-auto">
-            <p class="mb-2 text-sm">© 2024 Artur Lauche. All rights reserved.</p>
-            <p class="text-lg">
-                <a href="https://lauche.eu/n-privacy-policy"
-                    class="font-semibold text-gray-600 transition duration-300 hover:text-gray-800 hover:underline">Privacy
-                    Policy</a> |
-                <a href="https://lauche.eu/n-impressum"
-                    class="font-semibold text-gray-600 transition duration-300 hover:text-gray-800 hover:underline">Impressum</a>
-            </p>
-        </div>
-    </footer>
+  </main>
+  <footer>
+    <div class="legal-links">
+      <a href="https://lauche.eu/n-impressum.html" target="_blank">Impressum</a>
+      <a href="https://lauche.eu/n-privacy-policy.html" target="_blank">Datenschutzerklärung</a>
+    </div>
+  </footer>
+  <div id="cookie-banner" class="cookie-banner">
+    <p>This site uses cookies to provide you with a great user experience. By using this website you accept our <a href="https://lauche.eu/n-privacy-policy.html" target="_blank">privacy policy</a> and <a href="https://lauche.eu/n-impressum.html" target="_blank">impressum</a>.</p>
+    <button id="cookie-accept" class="cookie-accept">Accept</button>
+  </div>
+  <script src="cookie.js"></script>
 </body>
-
 </html>
