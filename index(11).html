@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>L-Media</title>
+  	<script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
+        <div class="container mx-auto px-4">
+            <h1 class="mb-2 text-center text-5xl font-bold">Welcome to L-Media</h1>
+            <p class="mb-8 mt-4 text-center text-xl">Your destination for your video streaming needs.</p>
+            <div class="relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
+                <video class="absolute left-0 top-0 h-full w-full" controls>
+                    <source src="https://media-cdn.lauche.eu/test-video.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
+        <div class="container mx-auto px-4">
+            <h2 class="mb-8 text-center text-3xl font-bold">Promoted or Featured Videos</h2>
+            <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
+                <a href="https://media.lauche.eu/pofv-1" class="transform rounded-lg bg-white p-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://cdn.lauche.eu/vp-1" alt="Thumbnail of Video 1" class="mx-auto mb-4" />
+                    <h3 class="mb-2 text-center text-xl font-bold">First Video</h3>
+                </a>
+                <a href="https://media.lauche.eu/pofv-2" class="transform rounded-lg bg-white p-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://cdn.lauche.eu/vp-2" alt="Thumbnail of Video 2" class="mx-auto mb-4" />
+                    <h3 class="mb-2 text-center text-xl font-bold">Second Video</h3>
+                </a>
+                <a href="https://media.lauche.eu/pofv-3" class="transform rounded-lg bg-white p-6 shadow-md transition-all duration-300 hover:scale-105 hover:shadow-xl">
+                    <img src="https://cdn.lauche.eu/vp-3" alt="Thumbnail of Video 3" class="mx-auto mb-4" />
+                    <h3 class="mb-2 text-center text-xl font-bold">Third Video</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+    <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="mb-8 text-3xl font-bold">Search for Videos</h2>
+            <p class="mb-8 text-xl">Find your next favorite video!</p>
+            <a href="https://search.media.lauche.eu/" class="inline-block transform rounded-full bg-blue-500 px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-110 hover:bg-blue-600">Search Now</a>
+        </div>
+    </section>
+    <footer class="bg-gradient-to-r from-blue-100 to-blue-300 py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-sm font-semibold text-blue-900">© 2024 Artur Lauche. All rights reserved.</p>
+            <ul class="mt-2 flex justify-center space-x-8">
+                <li>
+                    <a href="https://lauche.eu/n-impressum" class="text-blue-800 transition-colors duration-300 hover:text-blue-600">Impressum</a>
+                </li>
+                <li>
+                    <a href="https://lauche.eu/n-privacy-policy" class="text-blue-800 transition-colors duration-300 hover:text-blue-600">Privacy Policy</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+</html>
