@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="tailwind.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>L-Media</title>
@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="144x144" href="/assets/browser-assets/apple-icon-144x144.png">
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/browser-assets/apple-icon-152x152.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/browser-assets/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192" href="/assets/browser-assets/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/assets/browser-assets/android-icon-192x192.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/assets/browser-assets/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/browser-assets/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/browser-assets/favicon-16x16.png">
@@ -22,25 +22,33 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/assets/browser-assets/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
         <div class="container mx-auto px-4">
             <h1 class="mb-2 text-center text-5xl font-bold">Welcome to L-Media</h1>
             <p class="mb-8 mt-4 text-center text-xl">Your destination for your video streaming needs.</p>
-            <div class="relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
-                <div class="absolute top-2 left-2 bg-black bg-opacity-70 text-white py-1 px-2 rounded text-lg z-10">Test Video</div>
-                <video id="custom-video" class="absolute left-0 top-0 h-full w-full" src="https://media-delivery.leunos.com/test-video.mp4"></video>
-                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 flex flex-col items-center">
-                    <div class="w-full flex items-center mb-2">
-                        <button id="play-pause" class="text-white text-2xl mx-2">▶️</button>
-                        <input type="range" id="seek-bar" value="0" max="100" class="flex-grow mx-2">
-                        <div class="text-white mx-2" id="current-time">0:00</div>
-                        <div class="text-white mx-2">/</div>
-                        <div class="text-white mx-2" id="duration">0:00</div>
-                        <button id="mute-unmute" class="text-white text-2xl mx-2">🔊</button>
-                        <input type="range" id="volume-bar" value="100" max="100" class="w-16 mx-2">
-                        <button id="fullscreen" class="text-white text-2xl mx-2">⛶</button>
+            <div class="relative overflow-hidden rounded-lg shadow-lg">
+                <div class="custom-video-container relative bg-black rounded-lg">
+                    <div class="absolute top-2 left-2 z-10 text-white text-lg font-bold px-4 py-2 bg-opacity-75 bg-black rounded">
+                        Sample Video Title
+                    </div>
+                    <video id="custom-video" class="w-full rounded-lg">
+                        <source src="https://media-delivery.leunos.com/test-video.mp4" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="custom-controls absolute bottom-0 left-0 right-0 p-4 bg-opacity-75 bg-black flex justify-between items-center">
+                        <button id="play-pause" class="text-white p-2 rounded-full bg-gray-700 hover:bg-gray-800">
+                            Play
+                        </button>
+                        <input id="seek-bar" type="range" class="w-full mx-4">
+                        <button id="mute" class="text-white p-2 rounded-full bg-gray-700 hover:bg-gray-800">
+                            Mute
+                        </button>
+                        <button id="full-screen" class="text-white p-2 rounded-full bg-gray-700 hover:bg-gray-800">
+                            Full Screen
+                        </button>
                     </div>
                 </div>
             </div>
