@@ -22,47 +22,57 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/assets/browser-assets/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-    <script src="videoPlayer.js" defer></script>
 </head>
 <body>
     <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
         <div class="container mx-auto px-4">
             <h1 class="mb-2 text-center text-5xl font-bold">Welcome to L-Media</h1>
             <p class="mb-8 mt-4 text-center text-xl">Your destination for your video streaming needs.</p>
-            <div class="relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
-                <div id="custom-video-player" class="absolute left-0 top-0 h-full w-full">
-                    <video id="main-video" class="h-full w-full">
-                        <source src="https://media-delivery.leunos.com/test-video.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="absolute top-0 left-0 p-4 text-white text-lg font-bold bg-black bg-opacity-50 rounded-br-lg">
-                        Sample Video Title
+            <div class="relative mx-auto w-full max-w-4xl overflow-hidden rounded-2xl shadow-lg">
+                <div class="absolute top-0 left-0 z-10 m-4 rounded-lg bg-black bg-opacity-50 px-4 py-2 text-white">
+                    <h2 class="text-lg font-bold">Video Title</h2>
+                </div>
+                <video id="video-player" class="w-full">
+                    <source src="https://media-delivery.leunos.com/test-video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div id="video-controls" class="absolute bottom-0 left-0 right-0 z-10 flex items-center justify-between bg-black bg-opacity-50 px-4 py-2">
+                    <div class="flex items-center space-x-4">
+                        <button id="play-pause-btn" class="rounded-full bg-white p-2 text-black hover:bg-gray-200 focus:outline-none">
+                            <svg id="play-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <svg id="pause-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </button>
+                        <span id="current-time" class="text-white">0:00</span>
+                        <input id="seek-slider" class="w-64" type="range" min="0" max="100" value="0">
+                        <span id="duration" class="text-white">0:00</span>
                     </div>
-                    <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-50 p-4">
-                        <div class="flex items-center justify-between">
-                            <button id="play-pause" class="text-white hover:text-blue-300">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" />
-                                </svg>
-                            </button>
-                            <input type="range" id="seek-bar" class="w-full mx-4" value="0">
-                            <button id="mute" class="text-white hover:text-blue-300">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" />
-                                </svg>
-                            </button>
-                            <input type="range" id="volume-bar" class="w-24" min="0" max="1" step="0.1" value="1">
-                            <button id="fullscreen" class="text-white hover:text-blue-300">
-                                <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M3 4a1 1 0 011-1h4a1 1 0 010 2H6.414l2.293 2.293a1 1 0 11-1.414 1.414L5 6.414V8a1 1 0 01-2 0V4zm9 1a1 1 0 010-2h4a1 1 0 011 1v4a1 1 0 01-2 0V6.414l-2.293 2.293a1 1 0 11-1.414-1.414L13.586 5H12zm-9 7a1 1 0 012 0v1.586l2.293-2.293a1 1 0 111.414 1.414L6.414 15H8a1 1 0 010 2H4a1 1 0 01-1-1v-4zm13-1a1 1 0 011 1v4a1 1 0 01-1 1h-4a1 1 0 010-2h1.586l-2.293-2.293a1 1 0 111.414-1.414L15 13.586V12a1 1 0 011-1z" />
-                                </svg>
-                            </button>
-                        </div>
+                    <div class="flex items-center space-x-3">
+                        <button id="mute-btn" class="rounded-full bg-white p-2 text-black hover:bg-gray-200 focus:outline-none">
+                            <svg id="volume-high-icon" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
+                            </svg>
+                            <svg id="volume-mute-icon" class="hidden h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" clip-rule="evenodd" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2" />
+                            </svg>
+                        </button>
+                        <input id="volume-slider" class="w-24" type="range" min="0" max="1" step="0.1" value="1">
+                        <button id="fullscreen-btn" class="rounded-full bg-white p-2 text-black hover:bg-gray-200 focus:outline-none">
+                            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+                            </svg>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
         <div class="container mx-auto px-4">
             <h2 class="mb-8 text-center text-3xl font-bold">Promoted or Featured Videos</h2>
@@ -82,6 +92,7 @@
             </div>
         </div>
     </section>
+
     <section class="bg-gradient-to-r from-blue-100 to-blue-300 py-16">
         <div class="container mx-auto px-4 text-center">
             <h2 class="mb-8 text-3xl font-bold">Search for Videos</h2>
@@ -89,6 +100,7 @@
             <a href="https://search.media.leunos.com" class="inline-block transform rounded-full bg-blue-500 px-8 py-4 font-bold text-white transition-all duration-300 hover:scale-110 hover:bg-blue-600">Search Now</a>
         </div>
     </section>
+
     <footer class="bg-gradient-to-r from-blue-100 to-blue-300 py-4">
         <div class="container mx-auto px-4 text-center">
             <p class="text-sm font-semibold text-blue-900">© 2024 Artur Lauche. All rights reserved.</p>
@@ -102,5 +114,7 @@
             </ul>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
