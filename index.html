@@ -31,12 +31,17 @@
             <div class="relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
                 <div class="absolute top-2 left-2 bg-black bg-opacity-70 text-white py-1 px-2 rounded text-lg z-10">Test Video</div>
                 <video id="custom-video" class="absolute left-0 top-0 h-full w-full" src="https://media-delivery.leunos.com/test-video.mp4"></video>
-                <div class="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex items-center justify-center bg-black bg-opacity-70 py-1 px-4 rounded">
-                    <button id="play-pause" class="text-white text-2xl mx-2">▶️</button>
-                    <input type="range" id="seek-bar" value="0" max="100" class="mx-2">
-                    <button id="mute-unmute" class="text-white text-2xl mx-2">🔊</button>
-                    <input type="range" id="volume-bar" value="100" max="100" class="mx-2">
-                    <button id="fullscreen" class="text-white text-2xl mx-2">⛶</button>
+                <div class="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 p-4 flex flex-col items-center">
+                    <div class="w-full flex items-center mb-2">
+                        <button id="play-pause" class="text-white text-2xl mx-2">▶️</button>
+                        <input type="range" id="seek-bar" value="0" max="100" class="flex-grow mx-2">
+                        <div class="text-white mx-2" id="current-time">0:00</div>
+                        <div class="text-white mx-2">/</div>
+                        <div class="text-white mx-2" id="duration">0:00</div>
+                        <button id="mute-unmute" class="text-white text-2xl mx-2">🔊</button>
+                        <input type="range" id="volume-bar" value="100" max="100" class="w-16 mx-2">
+                        <button id="fullscreen" class="text-white text-2xl mx-2">⛶</button>
+                    </div>
                 </div>
             </div>
         </div>
