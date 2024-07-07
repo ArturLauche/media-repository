@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
     const seekBar = document.getElementById("seek-bar");
     const volumeBar = document.getElementById("volume-bar");
     const fullscreenButton = document.getElementById("fullscreen");
+    const currentTimeDisplay = document.getElementById("current-time");
+    const durationDisplay = document.getElementById("duration");
 
     playPauseButton.addEventListener("click", function() {
         if (video.paused) {
@@ -34,6 +36,12 @@ document.addEventListener("DOMContentLoaded", function() {
     video.addEventListener("timeupdate", function() {
         const value = (100 / video.duration) * video.currentTime;
         seekBar.value = value;
+
+        // Update current time and duration
+        const currentTime = formatTime(video.currentTime);
+        const duration = formatTime(video.duration);
+        currentTimeDisplay.textContent = currentTime;
+        durationDisplay.textContent = duration;
     });
 
     volumeBar.addEventListener("input", function() {
@@ -51,4 +59,10 @@ document.addEventListener("DOMContentLoaded", function() {
             video.msRequestFullscreen();
         }
     });
+
+    function formatTime(seconds) {
+        const minutes = Math.floor(seconds / 60);
+        const secs = Math.floor(seconds % 60);
+        return `${minutes}:${secs < 10 ? "0" : ""}${secs}`;
+    }
 });
