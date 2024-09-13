@@ -29,10 +29,19 @@
             <h1 class="mb-2 text-center text-5xl font-bold">Welcome to L-Media</h1>
             <p class="mb-8 mt-4 text-center text-xl">Your destination for your video streaming needs.</p>
             <div class="relative overflow-hidden rounded-lg shadow-lg" style="padding-top: 56.25%;">
-                <video class="absolute left-0 top-0 h-full w-full" controls>
-                    <source src="https://media-delivery.leunos.com/intro.mp4" type="video/mp4" />
+                <video id="mainVideo" class="absolute left-0 top-0 h-full w-full" controls>
+                    <source src="https://media-delivery.leunos.com/intro_4k.mp4" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+            </div>
+            <div class="mt-4 text-center">
+                <label for="resolutionSelect" class="mr-2 font-semibold">Select Resolution:</label>
+                <select id="resolutionSelect" class="rounded-md border border-gray-300 p-2">
+                    <option value="https://media-delivery.leunos.com/intro_4k.mp4">4K</option>
+                    <option value="https://media-delivery.leunos.com/intro_1080p.mp4">1080p</option>
+                    <option value="https://media-delivery.leunos.com/intro_720p.mp4">720p</option>
+                    <option value="https://media-delivery.leunos.com/intro_480p.mp4">480p</option>
+                </select>
             </div>
         </div>
     </section>
@@ -75,5 +84,34 @@
             </ul>
         </div>
     </footer>
+    <script>
+        document.getElementById('resolutionSelect').addEventListener('change', function() {
+            var video = document.getElementById('mainVideo');
+            var currentTime = video.currentTime;
+            var isPaused = video.paused;
+            var newSource = this.value;
+
+            // Remove all existing <source> elements
+            while (video.firstChild) {
+                video.removeChild(video.firstChild);
+            }
+
+            // Create a new <source> element with the selected resolution
+            var source = document.createElement('source');
+            source.setAttribute('src', newSource);
+            source.setAttribute('type', 'video/mp4');
+            video.appendChild(source);
+
+            video.pause();
+            video.load();
+
+            video.addEventListener('loadedmetadata', function() {
+                video.currentTime = currentTime;
+                if (!isPaused) {
+                    video.play();
+                }
+            }, { once: true });
+        });
+    </script>
 </body>
 </html>
